@@ -5,27 +5,31 @@ const ProductSchema = mongoose.Schema(
   {
     name: {
       type: String,
-      reqired: [true, "Please enter product name"],
+      reqired: [true, "Please enter product name"]
     },
 
-    quatity: {
+    quantity: {
       type: Number,
       required: true,
-      default: 0,
+      default: 0
     },
 
     price: {
       type: Number,
       required: true,
-      default: 0,
+      default: 0
     },
 
     image: {
       type: String,
-      required: false,
+      required: false
     },
   },
   {
     timestamps: true,
   }
 );
+
+const Product = mongoose.model("Product", ProductSchema);
+
+module.exports = Product;
